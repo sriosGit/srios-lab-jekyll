@@ -7,7 +7,7 @@ title: Inicio
 <section class="hero">
     <div class="container">
         <div class="hero-image">
-            <div class="placeholder-image">placeholder</div>
+            <img src="{{ '/assets/images/manchas.jpeg' | relative_url }}" alt="Manchas" class="hero-profile-image">
         </div>
         <div class="hero-links">
             <span>srios-lab</span>|
@@ -18,13 +18,12 @@ title: Inicio
                 <a href="#" class="hero-link dropdown-toggle">social</a>
                 <div class="dropdown-menu">
                     {% if site.social.github %}
-                    <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener" class="dropdown-item">github</a>
+                    <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener"
+                        class="dropdown-item">github</a>
                     {% endif %}
                     {% if site.social.linkedin %}
-                    <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener" class="dropdown-item">linkedin</a>
-                    {% endif %}
-                    {% if site.social.twitter %}
-                    <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" rel="noopener" class="dropdown-item">twitter</a>
+                    <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener"
+                        class="dropdown-item">linkedin</a>
                     {% endif %}
                     {% if site.social.email %}
                     <a href="mailto:{{ site.social.email }}" class="dropdown-item">email</a>
@@ -32,5 +31,32 @@ title: Inicio
                 </div>
             </div>
         </div>
+        <div class="hero-links-mobile">
+            <span>srios-lab</span>
+            <span class="hero-separator">|</span>
+            <div class="hero-links-mobile-container">
+                <a href="{{ '/proyectos/' | relative_url }}" class="hero-link">proyectos</a>
+                <a href="{{ '/blog/' | relative_url }}" class="hero-link">blog</a>
+                <a href="{{ '/sobre-mi/' | relative_url }}" class="hero-link">sobre mí</a>
+                <div class="dropdown">
+                    <a href="#" class="hero-link dropdown-toggle">social</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enlaces sociales para móviles -->
+        <div class="hero-social-mobile">
+            {% if site.social.github %}
+            <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener"
+                class="social-link-mobile">github</a>
+            {% endif %}
+            {% if site.social.linkedin %}
+            <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener"
+                class="social-link-mobile">linkedin</a>
+            {% endif %}
+            {% if site.social.email %}
+            <a href="mailto:{{ site.social.email }}" class="social-link-mobile">email</a>
+            {% endif %}
+        </div>
     </div>
-</section> 
+</section>
