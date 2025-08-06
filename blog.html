@@ -1,0 +1,37 @@
+---
+layout: default
+title: Blog
+description: Artículos sobre desarrollo y tecnología
+---
+
+<!-- Blog Header -->
+<section class="blog-header">
+    <div class="container">
+        <h1>Blog</h1>
+        <p class="lead">
+            Aquí comparto mis pensamientos sobre desarrollo, nuevas tecnologías, 
+            mejores prácticas y experiencias en el mundo del software.
+        </p>
+    </div>
+</section>
+
+<!-- Blog Posts -->
+<section class="blog-content">
+    <div class="container">
+        <div class="posts-list">
+            {% for post in site.posts %}
+            <div class="post-item">
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                <span class="post-date">{{ post.date | date: "%d/%m/%Y" }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% if site.posts.size == 0 %}
+        <div class="no-posts">
+            <p>Estoy preparando algunos artículos interesantes. ¡Vuelve pronto!</p>
+        </div>
+        {% endif %}
+    </div>
+</section> 

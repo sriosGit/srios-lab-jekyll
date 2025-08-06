@@ -1,0 +1,47 @@
+---
+layout: default
+title: Proyectos
+description: Explora mis proyectos de desarrollo
+---
+
+<!-- Projects Header -->
+<section class="projects-header">
+    <div class="container">
+        <h1>Proyectos</h1>
+        <p class="lead">
+            Aquí encontrarás una colección de proyectos que he desarrollado, 
+            desde aplicaciones web completas hasta herramientas y contribuciones 
+            a proyectos de código abierto.
+        </p>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="projects-content">
+    <div class="container">
+        <div class="projects-grid">
+            {% for project in site.projects %}
+            <div class="project-item">
+                {% if project.clickable != false %}
+                <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+                {% else %}
+                <h3>{{ project.title }}</h3>
+                {% endif %}
+                <p>{{ project.description }}</p>
+                {% if project.github %}
+                <a href="{{ project.github }}" target="_blank" rel="noopener">github</a>
+                {% endif %}
+                {% if project.demo %}
+                <a href="{{ project.demo }}" target="_blank" rel="noopener">demo</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% if site.projects.size == 0 %}
+        <div class="no-projects">
+            <p>Estoy trabajando en algunos proyectos interesantes. ¡Vuelve pronto!</p>
+        </div>
+        {% endif %}
+    </div>
+</section> 

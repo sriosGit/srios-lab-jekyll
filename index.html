@@ -1,0 +1,36 @@
+---
+layout: home
+title: Inicio
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-image">
+            <div class="placeholder-image">placeholder</div>
+        </div>
+        <div class="hero-links">
+            <span>srios-lab</span>|
+            <a href="{{ '/proyectos/' | relative_url }}" class="hero-link">proyectos</a>
+            <a href="{{ '/blog/' | relative_url }}" class="hero-link">blog</a>
+            <a href="{{ '/sobre-mi/' | relative_url }}" class="hero-link">sobre mí</a>
+            <div class="dropdown">
+                <a href="#" class="hero-link dropdown-toggle">social</a>
+                <div class="dropdown-menu">
+                    {% if site.social.github %}
+                    <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener" class="dropdown-item">github</a>
+                    {% endif %}
+                    {% if site.social.linkedin %}
+                    <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener" class="dropdown-item">linkedin</a>
+                    {% endif %}
+                    {% if site.social.twitter %}
+                    <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" rel="noopener" class="dropdown-item">twitter</a>
+                    {% endif %}
+                    {% if site.social.email %}
+                    <a href="mailto:{{ site.social.email }}" class="dropdown-item">email</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
