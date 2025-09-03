@@ -2,43 +2,43 @@
 layout: default
 ---
 
-<article class="project">
+<article class="content-view">
     <div class="container">
         <!-- Project Header -->
-        <header class="project-header">
+        <header class="content-header">
             <h1>{{ page.title }}</h1>
-            <div class="project-meta">
+            <div class="content-meta">
                 {% if page.date %}
                 <time datetime="{{ page.date | date_to_xmlschema }}">
                     {{ page.date | date: "%d/%m/%Y" }}
                 </time>
                 {% endif %}
                 {% if page.status %}
-                <span class="project-status">{{ page.status }}</span>
+                <span class="content-status">{{ page.status }}</span>
                 {% endif %}
             </div>
             {% if page.description %}
-            <p class="project-description">{{ page.description }}</p>
+            <p class="content-description">{{ page.description }}</p>
             {% endif %}
         </header>
 
         <!-- Project Content -->
-        <div class="project-content">
+        <div class="content-body">
             {{ content }}
         </div>
 
         <!-- Project Links -->
-        <div class="project-links">
+        <div class="content-links">
             {% if page.github %}
-            <a href="{{ page.github }}" target="_blank" rel="noopener">github</a>
+            <a href="{{ page.github }}" target="_blank" rel="noopener" class="link">github</a>
             {% endif %}
             {% if page.demo %}
-            <a href="{{ page.demo }}" target="_blank" rel="noopener">demo</a>
+            <a href="{{ page.demo }}" target="_blank" rel="noopener" class="link">demo</a>
             {% endif %}
         </div>
 
         <!-- Project Navigation -->
-        <nav class="project-navigation">
+        <nav class="content-navigation">
             {% if page.previous.url %}
             <a href="{{ page.previous.url | relative_url }}" class="nav-link">
                 ← {{ page.previous.title }}

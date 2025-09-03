@@ -11,11 +11,11 @@ title: Inicio
         </div>
         <div class="hero-links">
             <span>srios-lab</span>|
-            <a href="{{ '/proyectos/' | relative_url }}" class="hero-link">proyectos</a>
-            <a href="{{ '/blog/' | relative_url }}" class="hero-link">blog</a>
-            <a href="{{ '/sobre-mi/' | relative_url }}" class="hero-link">sobre mí</a>
+            <a href="{{ '/proyectos/' | relative_url }}" class="link">proyectos</a>
+            <a href="{{ '/blog/' | relative_url }}" class="link">blog</a>
+            <a href="{{ '/sobre-mi/' | relative_url }}" class="link">sobre mí</a>
             <div class="dropdown">
-                <a href="#" class="hero-link dropdown-toggle">social</a>
+                <a href="#" class="link dropdown-toggle">social</a>
                 <div class="dropdown-menu">
                     {% if site.social.github %}
                     <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener"
@@ -35,11 +35,11 @@ title: Inicio
             <span>srios-lab</span>
             <span class="hero-separator">|</span>
             <div class="hero-links-mobile-container">
-                <a href="{{ '/proyectos/' | relative_url }}" class="hero-link">proyectos</a>
-                <a href="{{ '/blog/' | relative_url }}" class="hero-link">blog</a>
-                <a href="{{ '/sobre-mi/' | relative_url }}" class="hero-link">sobre mí</a>
+                <a href="{{ '/proyectos/' | relative_url }}" class="link">proyectos</a>
+                <a href="{{ '/blog/' | relative_url }}" class="link">blog</a>
+                <a href="{{ '/sobre-mi/' | relative_url }}" class="link">sobre mí</a>
                 <div class="dropdown">
-                    <a href="#" class="hero-link dropdown-toggle">social</a>
+                    <a href="#" class="link dropdown-toggle">social</a>
                 </div>
             </div>
         </div>
@@ -48,14 +48,14 @@ title: Inicio
         <div class="hero-social-mobile">
             {% if site.social.github %}
             <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener"
-                class="social-link-mobile">github</a>
+                class="link">github</a>
             {% endif %}
             {% if site.social.linkedin %}
             <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener"
-                class="social-link-mobile">linkedin</a>
+                class="link">linkedin</a>
             {% endif %}
             {% if site.social.email %}
-            <a href="mailto:{{ site.social.email }}" class="social-link-mobile">email</a>
+            <a href="mailto:{{ site.social.email }}" class="link">email</a>
             {% endif %}
         </div>
     </div>
