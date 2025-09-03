@@ -4,7 +4,7 @@ title: "Sitio Personal con Jekyll"
 date: 2024-01-15
 description: "Mi sitio personal construido con Jekyll y GitHub Pages, con un enfoque en diseño minimalista y simplicidad."
 category: web
-status: Completado
+status: completed
 clickable: true
 technologies: [Jekyll, GitHub Pages, Ruby, CSS, HTML]
 github: "https://github.com/sriosgit/srios-lab-jekyll"

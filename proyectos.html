@@ -5,41 +5,47 @@ description: Explora mis proyectos de desarrollo
 ---
 
 <!-- Projects Header -->
-<section class="projects-header">
+<section class="page-header">
     <div class="container">
         <h1>Proyectos</h1>
         <p class="lead">
-            Aquí encontrarás una colección de proyectos que he desarrollado, 
-            desde aplicaciones web completas hasta herramientas y contribuciones 
-            a proyectos de código abierto.
+            Aquí puedes explorar algunos de mis proyectos de desarrollo, 
+            desde aplicaciones web hasta herramientas y experimentos tecnológicos.
         </p>
     </div>
 </section>
 
-<!-- Projects Grid -->
-<section class="projects-content">
+<!-- Projects List -->
+<section class="page-content">
     <div class="container">
-        <div class="projects-grid">
+        <div class="content-list">
             {% for project in site.projects %}
-            <div class="project-item">
+            <div class="content-item">
+                {% if project.status %}
+                <span class="status {{ project.status | downcase | replace: ' ', '-' }}">{{ project.status }}</span>
+                {% endif %}
                 {% if project.clickable != false %}
                 <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
                 {% else %}
                 <h3>{{ project.title }}</h3>
                 {% endif %}
                 <p>{{ project.description }}</p>
-                {% if project.github %}
-                <a href="{{ project.github }}" target="_blank" rel="noopener">github</a>
-                {% endif %}
-                {% if project.demo %}
-                <a href="{{ project.demo }}" target="_blank" rel="noopener">demo</a>
+                {% if project.github or project.demo %}
+                <div class="content-links">
+                    {% if project.github %}
+                    <a href="{{ project.github }}" target="_blank" rel="noopener" class="link">github</a>
+                    {% endif %}
+                    {% if project.demo %}
+                    <a href="{{ project.demo }}" target="_blank" rel="noopener" class="link">demo</a>
+                    {% endif %}
+                </div>
                 {% endif %}
             </div>
             {% endfor %}
         </div>
         
         {% if site.projects.size == 0 %}
-        <div class="no-projects">
+        <div class="no-content">
             <p>Estoy trabajando en algunos proyectos interesantes. ¡Vuelve pronto!</p>
         </div>
         {% endif %}

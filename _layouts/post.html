@@ -2,31 +2,31 @@
 layout: default
 ---
 
-<article class="post">
+<article class="content-view">
     <div class="container">
         <!-- Post Header -->
-        <header class="post-header">
+        <header class="content-header">
             <h1>{{ page.title }}</h1>
-            <div class="post-meta">
+            <div class="content-meta">
                 <time datetime="{{ page.date | date_to_xmlschema }}">
                     {{ page.date | date: "%d/%m/%Y" }}
                 </time>
                 {% if page.categories %}
-                <span class="post-category">{{ page.categories | first }}</span>
+                <span class="content-category">{{ page.categories | first }}</span>
                 {% endif %}
             </div>
             {% if page.description %}
-            <p class="post-description">{{ page.description }}</p>
+            <p class="content-description">{{ page.description }}</p>
             {% endif %}
         </header>
 
         <!-- Post Content -->
-        <div class="post-content">
+        <div class="content-body">
             {{ content }}
         </div>
 
         <!-- Post Navigation -->
-        <nav class="post-navigation">
+        <nav class="content-navigation">
             {% if page.previous.url %}
             <a href="{{ page.previous.url | relative_url }}" class="nav-link">
                 ← {{ page.previous.title }}
